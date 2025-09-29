@@ -4,39 +4,207 @@
     Header
 ------------------------------------------------------------*/
 .c-header {
-  position: absolute;
+  position: fixed;
   z-index: 99;
   top: 0;
   left: 0;
   width: 100%;
-  height: $header-height;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 50px;
+  padding: 0 0 0 30px;
   transition: all 0.3s ease;
 
+  @include sp {
+    padding-left: 20px;
+  }
+
+  &--view {
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.16);
+    background: $black-01;
+  }
+
   &__logo {
-    img {
-      width: 250px;
+    a {
+      @include sp {
+        padding-bottom: 14px;
+        display: block;
+      }
+    }
+
+    span {
+      display: block;
+      color: $white-01;
+    }
+
+    &-address {
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+
+    &-company {
+      font-size: 2.4rem;
+      font-family: $heisei;
+      font-weight: $fw-heisei-w7;
+      letter-spacing: 0.1em;
+      @include sp {
+        font-size: 1.9rem;
+      }
     }
   }
-}
 
-.c-gnav {
-  font-weight: 500;
+  &__group {
+    display: flex;
+    align-items: center;
+  }
 
-  li {
-    display: inline-block;
+  &__menu {
+    font-weight: 700;
+    margin-right: 50px;
+    @include tabpc {
+      display: none;
+    }
 
-    + li {
-      margin-left: 20px;
+    ul {
+      width: 563px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    li {
+      display: inline-block;
+
+      + li {
+        margin-left: 20px;
+      }
+    }
+
+    a {
+      font-size: 1.8rem;
+      text-transform: capitalize;
+      padding: 30px 0;
+      position: relative;
+      color: $white-01;
+
+      &::before {
+        position: absolute;
+        content: '';
+        background: $white-01;
+        width: 0;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        transition: 0.4s;
+      }
+
+      &:hover {
+        opacity: 1;
+
+        &::before {
+          width: 100%;
+        }
+      }
     }
   }
 
-  a {
-    font-size: 1.6rem;
-    text-transform: capitalize;
-    padding: 30px 0;
+  &__menusp {
+    position: absolute;
+    width: 0;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transition: 0.4s;
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: $white-01;
+      opacity: 0.6;
+      z-index: 10;
+    }
+  }
+
+  &__menusp-active {
+    width: 100%;
+    z-index: 1;
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &__hamburger {
+    display: block;
+    width: 90px;
+    height: 85px;
+    position: relative;
+    z-index: 1001;
+    cursor: pointer;
+    padding: 20px 28px;
+    background-color: $black-02;
+    color: $white-01;
+    transition: 0.4s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+    @include sp {
+      margin-left: 0;
+    }
+
+    span {
+      width: 35px;
+      height: 1px;
+      background-color: $white-01;
+      transition: 0.2s;
+      display: block;
+      margin: 7px 0;
+      position: relative;
+
+      &:nth-of-type(3) {
+        width: 20px;
+      }
+    }
+
+    &.active span {
+      &:nth-child(1) {
+        top: 3px;
+        transform: rotate(45deg);
+      }
+
+      &:nth-child(2) {
+        left: 150%;
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        bottom: 13px;
+        width: 35px;
+        transform: rotate(-45deg);
+      }
+    }
+
+    p {
+      font-family: $futura;
+      font-weight: $fw-futura-book;
+      font-size: 1.3rem;
+      position: relative;
+      top: -5px;
+    }
+  }
+
+  &__mail {
+    background: $yellow-01;
+    width: 90px;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
   }
 }

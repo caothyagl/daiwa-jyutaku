@@ -148,3 +148,13 @@ a:hover {
 img {
   max-width: 100%;
 }
+
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.2);
+  }
+}

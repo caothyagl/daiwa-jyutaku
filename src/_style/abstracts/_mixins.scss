@@ -12,3 +12,9 @@
     @content;
   }
 }
+
+@mixin tabpc {
+  @media only screen and (max-width: 1240px) {
+    @content;
+  }
+}

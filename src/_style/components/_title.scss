@@ -3,3 +3,17 @@
 /*------------------------------------------------------------
     Title
 ------------------------------------------------------------*/
+.c-title {
+  text-align: center;
+
+  &__txt {
+    font-size: 3rem;
+    font-family: $futura;
+    font-weight: $fw-futura-book;
+  }
+
+  &__content {
+    font-family: $heisei;
+    font-weight: $fw-heisei-w7;
+  }
+}

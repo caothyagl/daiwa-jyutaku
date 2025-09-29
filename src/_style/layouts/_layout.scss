@@ -11,3 +11,20 @@ $-padding: 50px;
   margin: 0 auto;
   padding: 0 $-padding;
 }
+
+.l-container--1100 {
+  max-width: 1200px;
+  @include tabpc {
+    padding: 0 30px;
+  }
+}
+
+.l-container--1220 {
+  max-width: 1320px;
+  @include tabpc {
+    padding: 0 30px;
+  }
+  @include sp {
+    padding: 0 20px;
+  }
+}

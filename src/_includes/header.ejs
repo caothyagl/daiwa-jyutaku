@@ -1,27 +1,81 @@
-<header class="c-header js-header">
-  <div class="c-header__logo">
+<header id="s-header" class="c-header">
+  <h1 class="c-header__logo">
     <a href="<%= baseUrl() %>">
-      <img src="/assets/img/logo.png" alt="Logo" srcset="/assets/img/logo@2x.png 2x">
+      <span class="c-header__logo-address">兵庫県知事 (10) 8316号</span>
+      <span class="c-header__logo-company">大和住宅株式会社</span>
     </a>
-  </div>
-  <nav class="c-gnav">
-    <ul>
-      <% if (typeof linklists != 'undefined') { %>
+  </h1>
+  <div class="c-header__group">
+    <nav class="c-header__menu">
+      <ul>
+        <% if (typeof linklists != 'undefined') { %>
         <% linklists.main && linklists.main.forEach(link => { %>
-          <li>
-            <a <% if (link.current || link.active) { %>class="is-active"<% } %> href="<%= link.url %>"><%= link.title %></a>
-            <% if (link.links) { %>
-              <ul>
-                <% link.links.forEach(child_link => { %>
-                  <li>
-                    <a <% if (child_link.current) { %>class="is-active"<% } %> href="<%= child_link.url %>"><%= child_link.title %></a>
-                  </li>
-                <% }) %>
-              </ul>
-            <% } %>
-          </li>
+        <li>
+          <a <% if (link.current || link.active) { %>class="is-active"<% } %>
+            href="<%= link.url %>"><%= link.title %></a>
+          <% if (link.links) { %>
+          <ul>
+            <% link.links.forEach(child_link => { %>
+            <li>
+              <a <% if (child_link.current) { %>class="is-active"<% } %>
+                href="<%=
+                child_link.url %>"><%= child_link.title %></a>
+            </li>
+            <% }) %>
+          </ul>
+          <% } %>
+        </li>
         <% }) %>
-      <% } %>
-    </ul>
-  </nav>
+        <% } %>
+      </ul>
+    </nav>
+
+    <div class="c-header__menusp">
+      <nav class="c-nav">
+        <ul>
+          <% if (typeof linklists != 'undefined') { %>
+          <% linklists.hamburgerpc && linklists.hamburgerpc.forEach(link => { %>
+          <li>
+            <a <% if (link.current || link.active) { %>class="is-active"<% } %>
+              href="<%= link.url %>">
+              <span class="c-nav__en"><%= link.title_en %></span>
+              <span class="c-nav__ja"><%= link.title %></span>
+            </a>
+          </li>
+          <% }) %>
+          <% } %>
+        </ul>
+        <ul>
+          <% if (typeof linklists != 'undefined') { %>
+          <% linklists.hamburgersp && linklists.hamburgersp.forEach(link => { %>
+          <li>
+            <a <% if (link.current || link.active) { %>class="is-active"<% } %>
+              href="<%= link.url %>">
+              <span class="c-nav__en"><%= link.title_en %></span>
+              <span class="c-nav__ja"><%= link.title %></span>
+            </a>
+          </li>
+          <% }) %>
+          <% } %>
+        </ul>
+        <div class="c-nav__social">
+          <a href="#" target="_blank"><img
+              src="assets/img/common/ic-instagram.png"
+              alt="ic-ins"></a>
+          <a href="#" target="_blank"><img src="assets/img/common/ic-fb.png"
+              alt="ic-fb"></a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="c-header__hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+      <p>MENU</p>
+    </div>
+    <a href="#" class="c-header__mail"><img
+        src="assets/img/common/ic-contact.png"
+        alt="contact"></a>
+  </div>
 </header>

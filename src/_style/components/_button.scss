@@ -5,23 +5,28 @@
     Button
 ------------------------------------------------------------*/
 .c-btn1 {
-  display: inline-flex;
-  justify-content: center;
+  width: 100%;
+  max-width: 265px;
+  height: 46px;
+  display: flex;
   align-items: center;
-  min-height: 44px;
-  min-width: 140px;
-  padding: 0 30px;
-  font-family: $en-fonts;
+  justify-content: center;
+  font-weight: 700;
   font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 1.625rem;
-  border-radius: 50px;
-  background-color: $black;
-  color: $white;
-  transition: none;
+  border: 1px solid $black-02;
+  color: $black-03;
 
   &:hover {
-    background-color: color.adjust($color: $black, $lightness: 5%);
+    background: $yellow-01;
+    border: 1px solid $yellow-01;
     opacity: 1;
+  }
+
+  &--primary {
+    &:hover {
+      background: $black-01;
+      border: 1px solid $black-01;
+      color: $white-01;
+    }
   }
 }
