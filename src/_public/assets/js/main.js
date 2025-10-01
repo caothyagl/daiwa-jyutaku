@@ -71,6 +71,9 @@ function sliderSwiper() {
 
 function run() {
   if (
+    window.location.pathname === '/~training/caodinhthy/daiwa-jyutaku/' ||
+    window.location.pathname ===
+      '/~training/caodinhthy/daiwa-jyutaku/index.html' ||
     window.location.pathname === '/' ||
     window.location.pathname === '/index.html'
   ) {
