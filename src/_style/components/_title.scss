@@ -10,10 +10,25 @@
     font-size: 3rem;
     font-family: $futura;
     font-weight: $fw-futura-book;
+
+    &--sub {
+      font-size: 4rem;
+      line-height: 1.3;
+      @include sp {
+        font-size: 3rem;
+      }
+    }
   }
 
   &__content {
     font-family: $heisei;
     font-weight: $fw-heisei-w7;
+
+    &--sub {
+      font-size: 1.6rem;
+      @include sp {
+        font-size: 1.4rem;
+      }
+    }
   }
 }

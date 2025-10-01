@@ -58,7 +58,7 @@ function scrollToTop() {
 }
 
 function sliderSwiper() {
-  new Swiper('.top-mainvisual__slider', {
+  new Swiper('.c-mainvisual__slider', {
     loop: true,
     speed: 2000,
     effect: 'fade',
@@ -70,6 +70,14 @@ function sliderSwiper() {
 }
 
 function run() {
+  if (
+    window.location.pathname === '/' ||
+    window.location.pathname === '/index.html'
+  ) {
+    $('#s-header').addClass('h-top')
+  } else {
+    $('#s-header').removeClass('h-top')
+  }
   new universalParallax().init({
     speed: 8.0,
   })

@@ -28,3 +28,13 @@ $-padding: 50px;
     padding: 0 20px;
   }
 }
+
+.l-container--1760 {
+  max-width: 1860px;
+  @include tabpc {
+    padding: 0 30px;
+  }
+  @include sp {
+    padding: 0 20px;
+  }
+}
