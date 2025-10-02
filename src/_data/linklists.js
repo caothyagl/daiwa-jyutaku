@@ -5,7 +5,7 @@ export default (pagePath, config) => {
     main: [
       {
         title: '大和住宅について',
-        url: '#',
+        url: '/about.html',
       },
       {
         title: '委託管理について',
@@ -13,18 +13,18 @@ export default (pagePath, config) => {
       },
       {
         title: '会社情報 ',
-        url: '/about.html',
+        url: '/company.html',
       },
       {
         title: '物件情報',
-        url: '/company.html',
+        url: '#',
       },
     ],
     hamburgerpc: [
       {
         title: '大和住宅について',
         title_en: 'About us',
-        url: '#',
+        url: '/about.html',
       },
       {
         title: 'お知らせ',
@@ -44,7 +44,7 @@ export default (pagePath, config) => {
       {
         title: '会社情報',
         title_en: 'Company',
-        url: '#',
+        url: '/company.html',
       },
       {
         title: 'コラム',
@@ -71,7 +71,7 @@ export default (pagePath, config) => {
       {
         title: '大和住宅について',
         title_en: 'About us',
-        url: '#',
+        url: '/about.html',
       },
       {
         title: '委託管理について',
@@ -81,7 +81,7 @@ export default (pagePath, config) => {
       {
         title: '会社情報',
         title_en: 'Company',
-        url: '#',
+        url: '/company.html',
       },
       {
         title: '物件情報',
