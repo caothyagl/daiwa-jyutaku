@@ -65,6 +65,12 @@
       right: 15px;
       transform: translateY(-50%);
       transition: 0.4s;
+      @include sp {
+        width: 18px;
+        height: 7px;
+        top: 50%;
+        right: 20px;
+      }
     }
   }
 
@@ -180,7 +186,9 @@
 
     &--right {
       flex-direction: row-reverse;
-      margin-top: 42px;
+      @include tab {
+        margin-top: 42px;
+      }
       @include sp {
         margin-top: 15px;
       }
@@ -268,9 +276,9 @@
 
     .c-btn1 {
       margin: 0 auto;
-      max-width: 100%;
       @include sp {
         height: 35px;
+        max-width: 100%;
       }
     }
   }
@@ -309,7 +317,7 @@
     position: relative;
 
     &:last-child {
-      .top-nada__title {
+      .c-topnada__title {
         letter-spacing: 0.04em;
       }
     }

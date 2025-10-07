@@ -28,19 +28,85 @@
     width: 385px;
     z-index: 10;
     color: $white-01;
-    top: 51.8%;
+    top: 46.8%;
     left: 50%;
     transform: translate(-50%, -50%);
 
     img {
       max-width: 305px;
+      object-fit: contain !important;
+      width: auto !important;
+      height: auto !important;
       @include sp {
-        max-width: 260px;
+        max-width: 172px;
       }
     }
 
     @include sp {
       width: 100%;
+      top: 51%;
+    }
+  }
+
+  &__mountain {
+    width: 192px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  &__cloud {
+    position: absolute;
+    animation: flyClouds 3s ease-in-out infinite;
+    width: auto;
+
+    &--cloud1 {
+      top: 12px;
+      left: -18px;
+      animation-delay: 1s;
+      @include sp {
+        top: 8px;
+        left: -12px;
+      }
+    }
+
+    &--cloud2 {
+      top: 52px;
+      left: -34px;
+      animation-delay: 2s;
+      @include sp {
+        top: 53px;
+        left: -51px;
+      }
+    }
+
+    &--cloud3 {
+      bottom: 15px;
+      left: -55px;
+      animation-delay: 3s;
+      @include sp {
+        bottom: 11px;
+        left: -40px;
+      }
+    }
+
+    &--cloud4 {
+      top: 20px;
+      right: 16px;
+      animation-delay: 2s;
+      @include sp {
+        top: 20px;
+        right: 15px;
+      }
+    }
+
+    &--cloud5 {
+      top: 41px;
+      right: -54px;
+      animation-delay: 3s;
+      @include sp {
+        top: 33px;
+        right: -49px;
+      }
     }
   }
 
@@ -54,6 +120,7 @@
     margin-left: 12px;
     @include sp {
       font-size: 2.8rem;
+      margin-top: 51px;
     }
   }
 
@@ -62,9 +129,10 @@
     font-family: $futura;
     font-weight: $fw-futura-bold;
     margin-top: 13px;
-    line-height: 1.5;
+    line-height: 1.8;
     @include sp {
       font-size: 4.8rem;
+      line-height: 1.55;
     }
   }
 
@@ -141,5 +209,22 @@
     background-position: center;
     background-repeat: no-repeat;
     transition: opacity 0.5s ease;
+  }
+}
+
+@keyframes flyClouds {
+  0% {
+    transform: translateX(0);
+    transform: translate(0);
+  }
+
+  50% {
+    transform: translateX(10px);
+    transform: translate(10px);
+  }
+
+  to {
+    transform: translateX(0);
+    transform: translate(0);
   }
 }

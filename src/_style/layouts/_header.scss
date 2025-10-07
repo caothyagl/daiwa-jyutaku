@@ -103,6 +103,12 @@
     }
   }
 
+  .c-menu__text.active {
+    &::before {
+      width: 100%;
+    }
+  }
+
   &__menusp {
     position: absolute;
     width: 0;
@@ -169,8 +175,15 @@
 
     &.active span {
       &:nth-child(1) {
-        top: 3px;
+        top: 8px;
+        left: 5px;
+        width: 25px;
         transform: rotate(45deg);
+        @include sp {
+          width: 26px;
+          top: 7px;
+          left: 4px;
+        }
       }
 
       &:nth-child(2) {
@@ -179,9 +192,15 @@
       }
 
       &:nth-child(3) {
-        bottom: 13px;
-        width: 35px;
+        bottom: 9px;
+        left: 5px;
+        width: 25px;
         transform: rotate(-45deg);
+        @include sp {
+          width: 26px;
+          bottom: 9px;
+          left: 4px;
+        }
       }
     }
 

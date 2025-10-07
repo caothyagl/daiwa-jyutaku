@@ -11,11 +11,20 @@ function handleMenu() {
     }
   })
 
+  $('.c-header__menusp').on('click', function (e) {
+    if (!$(e.target).closest('.c-nav').length) {
+      $('html, body').css({ overflow: 'unset', 'touch-action': 'unset' })
+      $('.c-header').removeClass('is-active')
+      $('.c-header__hamburger').toggleClass('active')
+      $(this).removeClass('c-header__menusp-active')
+    }
+  })
+
   // ANCHOR LINK SCROLL
   $('.c-menu__text--anchor').click(function () {
-    $('.c-menu__hamburger').removeClass('active')
-    $('.c-menu__sp').removeClass('active')
     $('.c-header').removeClass('is-active')
+    $('.c-header__hamburger').removeClass('active')
+    $('.c-header__menusp').removeClass('active')
     $('html, body').css({ overflowY: 'unset', 'touch-action': 'unset' })
   })
 }
@@ -69,6 +78,19 @@ function sliderSwiper() {
   })
 }
 
+function menuPath() {
+  $(document).ready(function () {
+    const currentUrl = window.location.pathname
+    $('.c-menu__text').each(function () {
+      const link = $(this).attr('href')
+
+      if (link && currentUrl.includes(link)) {
+        $(this).addClass('active')
+      }
+    })
+  })
+}
+
 function run() {
   if (
     window.location.pathname === '/~training/caodinhthy/daiwa-jyutaku/' ||
@@ -90,6 +112,7 @@ function run() {
   handleMenu()
   scrollToTop()
   sliderSwiper()
+  menuPath()
 }
 
 $(function () {
