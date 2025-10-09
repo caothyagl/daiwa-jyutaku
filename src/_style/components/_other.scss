@@ -11,6 +11,9 @@
   position: relative;
   z-index: 11;
 
+  @include pc {
+    width: calc(100% - 350px);
+  }
   @include tabpc {
     width: calc(100% - 285px);
   }
